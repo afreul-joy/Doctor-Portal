@@ -9,7 +9,7 @@ const bannerBg = {
   background: `url{$bg}`,
   
 }
-
+// vertically centering 
 const verticalCenter = {
   display: 'flex',
   alignItems: 'center',
@@ -32,6 +32,7 @@ const Banner = () => {
               <Button variant="contained"sx={{my:2}} style={{backgroundColor:'#5CE7ED'}}>Get Appointment</Button>
           </Box>
         </Grid>
+
         <Grid item xs={12} md={6} style={verticalCenter} >
          <img style={{width:'400px'}} src={chair} alt="" />
         </Grid>

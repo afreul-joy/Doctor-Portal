@@ -7,6 +7,7 @@ import {
   Link
 } from "react-router-dom";
 import Home from './Pages/Home/Home/Home';
+import Appointment from './Pages/Appointment/Appointment/Appointment';
 
 
 function App() {
@@ -14,8 +15,8 @@ function App() {
     <div className="App">
       <Router>
           <Switch>
-          <Route path="/home">
-            <Home />
+          <Route path="/appointment">
+            <Appointment></Appointment>
           </Route>
           <Route path="/home">
             <Home />
