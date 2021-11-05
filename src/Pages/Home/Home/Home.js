@@ -6,6 +6,7 @@ import Banner from './Banner/Banner';
 
 const Home = () => {
   return (
+    // Home.js এর ভিতরে সবগুলা সামারি করে রাখা হয়েছে যেগুলা ui তে দেখাবো 
     <div>
       <Navigation></Navigation>
       <Banner></Banner>

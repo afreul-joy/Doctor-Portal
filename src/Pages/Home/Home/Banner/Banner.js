@@ -1,6 +1,5 @@
 import React from 'react';
 import chair from '../../../../images/chair.png'
-import bg from '../../../../images/bg.png'
 import Grid from '@mui/material/Grid';
 import { Button, Container, Typography } from '@mui/material';
 import { Box } from '@mui/system';
