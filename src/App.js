@@ -25,9 +25,9 @@ function App() {
               <Appointment></Appointment>
             </PrivateRoute>
 
-            <PrivateRoute path="/dashboard">
-              <Dashboard></Dashboard>
-            </PrivateRoute>
+              <PrivateRoute path="/dashboard">
+                <Dashboard></Dashboard>
+              </PrivateRoute>
 
             {/* <Route path="/dashboard">
               <Dashboard></Dashboard>
