@@ -44,20 +44,20 @@ const BookingModal = ({openBooking,handleBookingClose,booking,date,setBookingSuc
       date : date.toLocaleDateString()
     }
    // send to the server
-    fetch('http://localhost:5000/appointments', {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify(appointment)
-    })
-      .then(res => res.json())
-      .thne(data => {
-        if (data.insertedId) {
-            setBookingSucces(true)
-          handleBookingClose() 
-        }
-      })
+            fetch('http://localhost:5000/appointments', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(appointment)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    setBookingSucces(true);
+                    handleBookingClose();
+                }
+            });
 
     console.log(appointment); 
       
