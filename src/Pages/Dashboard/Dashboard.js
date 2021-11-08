@@ -25,6 +25,8 @@ import { Button} from '@mui/material';
 import DashboardHome from './DashboardHome/DashboardHome';
 import MakeAdmin from './MakeAdmin/MakeAdmin';
 import AddDoctor from './AddDoctor/AddDoctor';
+import useAuth from '../../hooks/useAuth';
+import AdminRoute from '../Login/AdminRoute/AdminRoute';
 
 const drawerWidth = 200;
 
@@ -33,7 +35,7 @@ function Dashboard(props) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   let { path, url } = useRouteMatch();
-
+  const { admin } = useAuth();
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -46,9 +48,11 @@ function Dashboard(props) {
       
       <Link style={{ textDecoration: 'none', color: 'black' }} to={`${url}`}><Button variant="outlined" sx={{ m: 2 }}>Dashboard</Button></Link>
 
-      <Link style={{ textDecoration: 'none', color: 'black' }} to={`${url}/adddoctor`}><Button variant="outlined" sx={{ m: 2 }}>Add Doctor</Button></Link>
-      
-      <Link style={{ textDecoration: 'none', color: 'black' }} to={`${url}/makeAdmin`}><Button variant="outlined" sx={{ m: 2 }}>Make Admin</Button></Link>
+      {admin && <Box>
+          <Link style={{ textDecoration: 'none', color: 'black' }} to={`${url}/adddoctor`}><Button variant="outlined" sx={{ m: 2 }}>Add Doctor</Button></Link>
+          
+          <Link style={{ textDecoration: 'none', color: 'black' }} to={`${url}/makeAdmin`}><Button variant="outlined" sx={{ m: 2 }}>Make Admin</Button></Link>
+      </Box>}
       
       <List>
         {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
@@ -132,12 +136,12 @@ function Dashboard(props) {
         <Route exact path={path}>
          <DashboardHome></DashboardHome>
         </Route>
-        <Route path={`${path}/makeAdmin`}>
+        <AdminRoute path={`${path}/makeAdmin`}>
           <MakeAdmin></MakeAdmin>
-        </Route>
-        <Route path={`${path}/addDoctor`}>
+        </AdminRoute>
+        <AdminRoute path={`${path}/addDoctor`}>
           <AddDoctor></AddDoctor>
-        </Route>
+        </AdminRoute>
       </Switch>
 
 

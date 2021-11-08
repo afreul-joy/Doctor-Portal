@@ -1,9 +1,11 @@
 import { Alert, Button, TextField } from '@mui/material';
 import React, { useState } from 'react';
+import useAuth from '../../../hooks/useAuth';
 
 const MakeAdmin = () => {
   const [email, setEmail] = useState('');
-  const [success,setSuccess] = useState(false)
+  const [success, setSuccess] = useState(false);
+
   const handleAdminSubmit = e => {
     const user = { email };
     fetch('http://localhost:5000/users/admin', {
